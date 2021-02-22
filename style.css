@@ -159,6 +159,10 @@ span, p {
         margin-bottom: 5px;
     }
 
+    .info-data > * {
+        text-align: center;
+    }
+
     .vert-line {
         display: none;
     }
