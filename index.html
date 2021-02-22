@@ -2,33 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+  <script src="./getGEO.js"></script>
   <title>Frontend Mentor | IP Address Tracker</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
-
-  IP Address Tracker
-
-  Search for any IP address or domain
-
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<body onload="httpGet()">
+  <div class="main">
+    <nav>
+      <h1>
+        IP Address Tracker
+      </h1>
+      <form action="index.html" method="GET" id="search-form">
+        <input type="text" name="search" id="search-input" placeholder="Search IP address">
+        <input type="submit" value="" id="search-submit"> 
+      </form>
+    </nav>
+    <div class="ip-info-box">
+      <div class="info-data">
+        <h2>IP Address</h2>
+        <span id="ip-addy"></span>
+      </div>
+      <div class="vert-line"></div>
+      <div class="info-data">
+        <h2>Locations</h2>
+        <p id="locations"></p>
+        <p id="zip"></p>
+      </div>
+      <div class="vert-line"></div>
+      <div class="info-data">
+        <h2>Timezone</h2>
+        <span id="timezone"></span>
+      </div>
+      <div class="vert-line"></div>
+      <div class="info-data">
+        <h2>ISP</h2>
+        <span id="isp"></span>
+      </div>
+    </div>
   </div>
+    <div class="map-container">
+      <div id="mapid"></div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    z-index: -3;
+}
+
+.main {
+    background-size: cover;
+    flex-direction: column;
+    background-image: url('./images/pattern-bg.png');
+}
+
+nav {
+    padding-top: 60px;
+    padding-bottom: 100px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 1px;
+}
+
+#search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    height: 45px;
+    margin: 0 auto;
+}
+
+
+#search-input {
+    margin: 0;
+    border-radius:  20px 0 0 20px;
+    border: none;
+    width: 90%;
+    height: 100%;
+    padding-left: 15px;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+#search-input:focus {
+    outline: none;
+}
+
+
+#search-submit {
+    margin: 0;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-color: black;
+    height: 100%;
+    width: 50px;
+    background-image: url('./images/icon-arrow.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: content-box ;
+    transition: 0.3s;
+}
+
+#search-submit:focus {
+    outline: none;
+}
+
+#search-submit:hover{
+    background-color: rgb(44, 44, 44);
+}
+
+.ip-info-box {
+    margin: 0 auto;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    height: 80px;
+    padding: 15px 10px 30px 10px;
+    justify-content: space-evenly;
+    width: 80%;
+    height: fit-content;
+    z-index: 1;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+    position: relative;
+    top: 65px;
+
+}
+
+.ip-info-box > * {
+    margin: 0 15px;
+}
+
+.vert-line {
+    width: 1px;
+    height: 65px;
+    background-color: rgba(0, 0, 0, 0.199);
+    margin-top: 10px;
+}
+
+h2 {
+    color: rgb(139, 139, 139);
+    font-size: .6em;
+}
+
+span, p {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.map-container {
+    height: 600px;
+}
+
+#mapid { 
+    height: 100%;
+    z-index: 0;
+}
+
+/********************Mobile******************/
+@media only screen and (max-width: 1000px){
+    nav {
+       padding-top: 0; 
+    }
+
+    .main {
+        height: 350px;
+    }
+
+    .ip-info-box {
+        flex-direction: column;
+        top: 60px;
+        align-items: center;
+        padding: 15px 10px;
+    }
+    h1 {
+        font-size: 1.5em;
+
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .info-data {
+        margin-bottom: 5px;
+    }
+
+    .vert-line {
+        display: none;
+    }
+
+    #search-form {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:800px){
+
+}
